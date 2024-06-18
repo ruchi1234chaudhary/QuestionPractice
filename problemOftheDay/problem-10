@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int rectanglesInCircle(int r) {
+        int diameter = 2 * r;
+        int count = 0;
+
+        // Iterate over all possible width (w) and height (h) values
+        for (int w = 1; w <= diameter; ++w) {
+            for (int h = 1; h <= diameter; ++h) {
+                // Calculate the diagonal of the rectangle
+                if (std::sqrt(w * w + h * h) <= diameter) {
+                    ++count;
+                }
+            }
+        }
+
+        return count;
+    }
+};
